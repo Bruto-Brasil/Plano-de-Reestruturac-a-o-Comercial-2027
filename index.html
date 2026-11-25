@@ -165,7 +165,7 @@ section {
 .in { animation: rise 600ms ease-out both; animation-delay: calc(var(--i, 0) * 110ms); }
 
 .nav{position:fixed;bottom:18px;right:18px;display:flex;gap:8px;align-items:center;font-family:Barlow,Arial,sans-serif;z-index:5}
-.nav button{width:44px;height:44px;border:0;border-radius:22px;background:rgba(40,41,41,.8);color:#F5F3EF;font-size:22px;cursor:pointer}
+.nav button{display:flex;align-items:center;justify-content:center;width:44px;height:44px;border:0;border-radius:22px;background:rgba(40,41,41,.8);color:#F5F3EF;font-size:22px;cursor:pointer}
 .nav button:hover{background:#DF6420}
 .nav span{color:#F5F3EF;background:rgba(40,41,41,.8);padding:10px 14px;border-radius:22px;font-size:15px;letter-spacing:1px}
 </style></head><body>
@@ -302,7 +302,7 @@ section {
 </div>
 </section>
 </div>
-<div class="nav"><button id="prev" aria-label="Slide anterior">‹</button><span id="count"></span><button id="next" aria-label="Próximo slide">›</button></div>
+<div class="nav"><button id="prev" aria-label="Slide anterior">‹</button><span id="count"></span><button id="next" aria-label="Próximo slide">›</button><button id="fs" aria-label="Tela cheia" title="Tela cheia (F)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path id="fsi" d="M4 9V4h5M15 4h5v5M20 15v5h-5M9 20H4v-5"/></svg></button></div>
 <script>
 const st=document.getElementById('stage'),S=[...st.children],N=S.length;let cur=0;
 function fit(){const k=Math.min(innerWidth/1920,innerHeight/1080);st.style.transform=`scale(${k}) translate(-50%,-50%)`;st.style.transformOrigin='0 0';st.style.left='50%';st.style.top='50%';st.style.transform=`translate(-50%,-50%) scale(${k})`;st.style.transformOrigin='50% 50%';}
@@ -314,5 +314,13 @@ addEventListener('resize',fit);addEventListener('hashchange',fromHash);
 addEventListener('keydown',e=>{if(['ArrowRight','PageDown',' ','Enter'].includes(e.key)){e.preventDefault();go(cur+1)}if(['ArrowLeft','PageUp','Backspace'].includes(e.key)){e.preventDefault();go(cur-1)}if(e.key==='Home')go(0);if(e.key==='End')go(N-1);});
 document.getElementById('next').onclick=()=>go(cur+1);document.getElementById('prev').onclick=()=>go(cur-1);
 let tx=null;addEventListener('touchstart',e=>tx=e.touches[0].clientX,{passive:true});addEventListener('touchend',e=>{if(tx===null)return;const d=e.changedTouches[0].clientX-tx;if(Math.abs(d)>40)go(cur+(d<0?1:-1));tx=null;});
+const fb=document.getElementById('fs'),fi=document.getElementById('fsi'),de=document.documentElement;
+const canFs=de.requestFullscreen||de.webkitRequestFullscreen;if(!canFs)fb.style.display='none';
+function isFs(){return document.fullscreenElement||document.webkitFullscreenElement}
+function toggleFs(){if(isFs()){(document.exitFullscreen||document.webkitExitFullscreen).call(document)}else{(de.requestFullscreen||de.webkitRequestFullscreen).call(de)}}
+fb.onclick=toggleFs;
+function fsUi(){const on=!!isFs();fi.setAttribute('d',on?'M9 4v5H4M20 9h-5V4M15 20v-5h5M4 15h5v5':'M4 9V4h5M15 4h5v5M20 15v5h-5M9 20H4v-5');fb.setAttribute('aria-label',on?'Sair da tela cheia':'Tela cheia');fb.title=on?'Sair da tela cheia (F)':'Tela cheia (F)';setTimeout(fit,50)}
+document.addEventListener('fullscreenchange',fsUi);document.addEventListener('webkitfullscreenchange',fsUi);
+addEventListener('keydown',e=>{if(e.key==='f'||e.key==='F')toggleFs()});
 fit();fromHash();
 </script></body></html>
