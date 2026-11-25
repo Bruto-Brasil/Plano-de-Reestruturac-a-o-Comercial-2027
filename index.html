@@ -272,6 +272,8 @@ body.m .nav button{width:40px;height:40px}
 body.m .nav span{padding:9px 12px;font-size:14px}
 
 .nav{position:fixed;bottom:18px;right:18px;display:flex;gap:8px;align-items:center;font-family:Barlow,Arial,sans-serif;z-index:5}
+.nav{transition:opacity .25s ease}
+.nav.hide{opacity:0;pointer-events:none}
 .nav button{display:flex;align-items:center;justify-content:center;width:44px;height:44px;border:0;border-radius:22px;background:rgba(40,41,41,.8);color:#F5F3EF;font-size:22px;cursor:pointer}
 .nav button:hover{background:#DF6420}
 .nav span{white-space:nowrap;color:#F5F3EF;background:rgba(40,41,41,.8);padding:10px 14px;border-radius:22px;font-size:15px;letter-spacing:1px}
@@ -500,7 +502,7 @@ body.m .nav span{padding:9px 12px;font-size:14px}
 </div>
 </section>
 </div>
-<div class="nav"><button id="prev" aria-label="Slide anterior">‹</button><span id="count"></span><button id="next" aria-label="Próximo slide">›</button><button id="fs" aria-label="Tela cheia" title="Tela cheia (F)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path id="fsi" d="M4 9V4h5M15 4h5v5M20 15v5h-5M9 20H4v-5"/></svg></button></div>
+<div class="nav" id="nav"><button id="prev" aria-label="Slide anterior">‹</button><span id="count"></span><button id="next" aria-label="Próximo slide">›</button><button id="fs" aria-label="Tela cheia" title="Tela cheia (F)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path id="fsi" d="M4 9V4h5M15 4h5v5M20 15v5h-5M9 20H4v-5"/></svg></button></div>
 <script>
 const st=document.getElementById('stage'),S=[...st.children],N=S.length;let cur=0;
 function fit(){const mob=matchMedia('(orientation: portrait)').matches&&Math.min(screen.width,innerWidth)<900;document.body.classList.toggle('m',mob);if(mob)return;const a=innerWidth/innerHeight,W=Math.max(1920,Math.round(1080*a)),H=Math.max(1080,Math.round(1920/a)),k=Math.min(innerWidth/W,innerHeight/H);
@@ -522,5 +524,9 @@ fb.onclick=toggleFs;
 function fsUi(){const on=!!isFs();fi.setAttribute('d',on?'M9 4v5H4M20 9h-5V4M15 20v-5h5M4 15h5v5':'M4 9V4h5M15 4h5v5M20 15v5h-5M9 20H4v-5');fb.setAttribute('aria-label',on?'Sair da tela cheia':'Tela cheia');fb.title=on?'Sair da tela cheia (F)':'Tela cheia (F)';setTimeout(fit,50)}
 document.addEventListener('fullscreenchange',fsUi);document.addEventListener('webkitfullscreenchange',fsUi);
 addEventListener('keydown',e=>{if(e.key==='f'||e.key==='F')toggleFs()});
+const nav=document.getElementById('nav');
+if(matchMedia('(hover: hover) and (pointer: fine)').matches){nav.classList.add('hide');
+ addEventListener('mousemove',e=>{const near=e.clientX>innerWidth-320&&e.clientY>innerHeight-200;nav.classList.toggle('hide',!near)});
+ document.documentElement.addEventListener('mouseleave',()=>nav.classList.add('hide'));}
 fit();fromHash();
 </script></body></html>
