@@ -112,10 +112,14 @@ section {
 .bar { width: 1142px; height: 2px; background: #8E8F8B; }
 .teams { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 48px; width: 1664px; }
 .team { display: flex; flex-direction: column; align-items: center; }
-.card { width: 100%; box-sizing: border-box; background: #FBFAF7; border-top: 6px solid var(--orange); padding: 28px 32px 32px; display: flex; flex-direction: column; }
+.card { flex: 1; width: 100%; box-sizing: border-box; background: #FBFAF7; border-top: 6px solid var(--orange); padding: 28px 32px 32px; display: flex; flex-direction: column; }
 .card-n { font-size: 44px; font-weight: 700; letter-spacing: -0.5px; color: var(--ink); line-height: 1.1; }
 .card-l { font-size: 26px; font-weight: 600; color: var(--orange); margin-top: 6px; }
 .card-list { font-size: 24px; line-height: 1.35; color: var(--soft); margin-top: 16px; padding-left: 28px; }
+.card-k { font-size: 24px; font-weight: 700; letter-spacing: 3px; color: var(--soft); margin-top: 18px; }
+.card-open { font-size: 26px; color: var(--soft); margin-top: 10px; }
+.members { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 24px; margin-top: 10px; }
+.member { font-size: 26px; line-height: 1.3; color: var(--ink); }
 .moves { display: flex; gap: 48px; margin-top: 36px; width: 1664px; }
 .move { flex: 1; display: flex; flex-direction: column; border-left: 4px solid var(--orange); padding-left: 20px; }
 .move-t { font-size: 24px; font-weight: 700; color: var(--ink); }
@@ -197,6 +201,7 @@ body.m .tree>.stem{height:14px;align-self:center} body.m .bar,body.m .team>.stem
 body.m .teams{grid-template-columns:1fr;gap:12px;width:100%}
 body.m .card{padding:16px 18px} body.m .card-n{font-size:24px} body.m .card-l{font-size:14px}
 body.m .card-list{font-size:14px;margin-top:8px;padding-left:18px}
+body.m .card-k{font-size:11px;letter-spacing:2px;margin-top:10px} body.m .card-open{font-size:14px;margin-top:4px} body.m .members{gap:2px 16px;margin-top:6px} body.m .member{font-size:15px}
 body.m .moves{flex-direction:column;gap:12px;width:100%;margin-top:20px}
 body.m .move-t,body.m .move-d{font-size:14px}
 body.m .steps{grid-template-columns:1fr;gap:20px;margin-top:28px}
@@ -261,18 +266,21 @@ body.m .nav span{padding:9px 12px;font-size:14px}
 <div class="teams">
 <div class="team in" style="--i:2"><div class="stem"></div><div class="card">
 <p class="card-n">Brutamontes</p>
-<p class="card-l">Acompanhamento · Rodrigo</p>
-<ul class="card-list"><li>8 integrantes</li><li>Formação de novos vendedores</li><li>Gera leads qualificados para a Performance</li></ul>
+<p class="card-l">Construção · RH e Diretor Comercial</p>
+<p class="card-k">8 INTEGRANTES</p>
+<p class="card-open">Equipe em formação</p>
 </div></div>
 <div class="team in" style="--i:3"><div class="stem"></div><div class="card">
 <p class="card-n">Movimento</p>
-<p class="card-l">Diretor comercial → Supervisor Alex</p>
-<ul class="card-list"><li>10 integrantes</li><li>Desenvolvimento de vendedores</li><li>40% dos leads da Bruto + prospecção própria</li></ul>
+<p class="card-l">Estruturada pelo Diretor Comercial</p>
+<p class="card-k">7 INTEGRANTES</p>
+<div class="members"><p class="member">Keila</p><p class="member">Kesler</p><p class="member">Rosa</p><p class="member">Rose</p><p class="member">Danielson</p><p class="member">Mariara</p><p class="member">Janaina</p></div>
 </div></div>
 <div class="team in" style="--i:4"><div class="stem"></div><div class="card">
 <p class="card-n">Performance</p>
-<p class="card-l">Supervisor · a definir</p>
-<ul class="card-list"><li>10 a 12 integrantes</li><li>Vendedores de maior desempenho</li><li>60% dos leads da Bruto + leads da Brutamontes</li></ul>
+<p class="card-l">Supervisor · José</p>
+<p class="card-k">7 INTEGRANTES</p>
+<div class="members"><p class="member">Alex</p><p class="member">Rodrigo</p><p class="member">Alexandre</p><p class="member">Maurício</p><p class="member">Carla</p><p class="member">Eduardo</p><p class="member">Douglas</p></div>
 </div></div>
 </div>
 </div>
