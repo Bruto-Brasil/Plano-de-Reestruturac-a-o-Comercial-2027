@@ -130,12 +130,12 @@ section {
 .lead-r { font-size: 24px; font-weight: 700; letter-spacing: 3px; color: var(--orange); }
 .lead-n { font-size: 26px; font-weight: 700; line-height: 1.15; color: var(--light); }
 .branch { width: 340px; display: flex; flex-direction: column; padding-left: 28px; box-sizing: border-box; }
-.row { display: flex; align-items: flex-start; padding-bottom: 8px; }
+.row { display: flex; align-items: flex-start; }
 .row-last { padding-bottom: 0; }
 .lane { width: 24px; align-self: stretch; border-left: 2px solid #8E8F8B; box-sizing: border-box; }
 .lane-last { align-self: flex-start; height: 21px; }
 .tick { width: 22px; height: 2px; background: #8E8F8B; margin-top: 19px; }
-.mem { flex: 1; font-size: 24px; font-weight: 600; line-height: 1.1; color: var(--ink); background: #FFFFFF; border: 1px solid #D6D5D0; border-radius: 8px; padding: 7px 16px; }
+.mem { flex: 1; font-size: 24px; font-weight: 600; line-height: 1.1; color: var(--ink); background: #FFFFFF; border: 1px solid #D6D5D0; border-radius: 8px; padding: 6px 16px; }
 .mem-open { font-weight: 500; color: #8A8B87; background: transparent; border: 2px dashed #B4B5B0; padding: 6px 16px; }
 
 .card-k { font-size: 24px; font-weight: 700; letter-spacing: 3px; color: var(--soft); margin-top: 18px; }
@@ -253,7 +253,7 @@ section {
 .s-orange .team-lead { background: var(--light); }
 .s-orange .lead-n { color: var(--ink); }
 .s-orange .mem { background: #FFFFFF; border: 1px solid #FFFFFF; }
-.s-orange .mem-open, .s-orange .mem-new { background: #F6D2BC; border: 1px solid #F6D2BC; color: #7A3A14; font-weight: 500; padding: 7px 16px; }
+.s-orange .mem-open, .s-orange .mem-new { background: #F6D2BC; border: 1px solid #F6D2BC; color: #7A3A14; font-weight: 500; padding: 6px 16px; }
 
 /* Formação Brutamontes em cartões */
 .bgrid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 32px; margin-top: 80px; }
@@ -261,6 +261,11 @@ section {
 .bchip { align-self: flex-start; background: var(--orange); color: var(--light); font-size: 22px; font-weight: 700; letter-spacing: 1px; padding: 6px 14px; border-radius: 6px; }
 .bcard-h { font-size: 34px; font-weight: 700; line-height: 1.15; color: var(--ink); margin-top: 18px; }
 .bcard-p { font-size: 26px; line-height: 1.32; color: var(--soft); margin-top: 8px; }
+
+.lane-gap { width: 0; height: 12px; border-left: 2px solid #8E8F8B; }
+.s-orange .lane-gap { border-left-color: #F6D2BC; }
+.mem { margin-bottom: 7px; }
+.row-last .mem { margin-bottom: 0; }
 
 #stage>section{width:var(--W,1920px);height:var(--H,1080px);padding-left:calc(128px + var(--ox,0px));padding-right:calc(128px + var(--ox,0px))}
 #stage>section:not(.cover){padding-top:calc(204px + var(--oy,0px))}
@@ -302,7 +307,7 @@ body.m .org>.org-stem{align-self:center;height:14px} body.m .org-bar,body.m .org
 body.m .org-cols{grid-template-columns:1fr;gap:18px;width:100%} body.m .team-h,body.m .team-lead,body.m .branch{width:100%} body.m .team-h{padding:10px 14px} body.m .org-col{align-items:stretch} body.m .org-col>.org-stem{display:block!important;align-self:center;height:8px} body.m .org-col>.org-stem:first-child{display:none!important} body.m .team-n{font-size:20px} body.m .team-s{font-size:13px}
 body.m .team-lead{padding:8px 12px} body.m .lead-r{font-size:11px;letter-spacing:2px} body.m .lead-n{font-size:18px}
 body.m .branch{padding-left:16px} body.m .lane{width:16px} body.m .tick{width:14px;margin-top:14px} body.m .lane-last{height:16px}
-body.m .mem{font-size:14px;padding:6px 12px} body.m .row{padding-bottom:5px}
+body.m .mem{font-size:14px;padding:6px 12px} body.m .row{padding-bottom:0} body.m .mem{margin-bottom:5px} body.m .row-last .mem{margin-bottom:0}
 body.m .moves{flex-direction:column;gap:12px;width:100%;margin-top:20px}
 body.m .move-t,body.m .move-d{font-size:14px}
 body.m .steps{grid-template-columns:1fr;gap:22px;margin-top:28px}
@@ -377,6 +382,7 @@ body.m .nav span{padding:9px 12px;font-size:14px}
 <div class="org-stem"></div>
 <div class="team-lead"><p class="lead-r">CONSTRUÇÃO</p><p class="lead-n">RH e Diretor Comercial</p></div>
 <div class="branch">
+<div class="lane-gap"></div>
 <div class="row"><div class="lane"><div class="tick"></div></div><p class="mem mem-open">A contratar</p></div>
 <div class="row"><div class="lane"><div class="tick"></div></div><p class="mem mem-open">A contratar</p></div>
 <div class="row"><div class="lane"><div class="tick"></div></div><p class="mem mem-open">A contratar</p></div>
@@ -393,6 +399,7 @@ body.m .nav span{padding:9px 12px;font-size:14px}
 <div class="org-stem"></div>
 <div class="team-lead"><p class="lead-r">ESTRUTURAÇÃO</p><p class="lead-n">Diretor Comercial</p></div>
 <div class="branch">
+<div class="lane-gap"></div>
 <div class="row"><div class="lane"><div class="tick"></div></div><p class="mem">Keila</p></div>
 <div class="row"><div class="lane"><div class="tick"></div></div><p class="mem">Kesler</p></div>
 <div class="row"><div class="lane"><div class="tick"></div></div><p class="mem">Rosa</p></div>
@@ -408,6 +415,7 @@ body.m .nav span{padding:9px 12px;font-size:14px}
 <div class="org-stem"></div>
 <div class="team-lead"><p class="lead-r">SUPERVISOR</p><p class="lead-n">José</p></div>
 <div class="branch">
+<div class="lane-gap"></div>
 <div class="row"><div class="lane"><div class="tick"></div></div><p class="mem">Alex</p></div>
 <div class="row"><div class="lane"><div class="tick"></div></div><p class="mem">Rodrigo</p></div>
 <div class="row"><div class="lane"><div class="tick"></div></div><p class="mem">Alexandre</p></div>
@@ -484,6 +492,7 @@ body.m .nav span{padding:9px 12px;font-size:14px}
 <div class="org-stem"></div>
 <div class="team-lead"><p class="lead-r">SUPERVISOR</p><p class="lead-n">Rodrigo</p></div>
 <div class="branch">
+<div class="lane-gap"></div>
 <div class="row"><div class="lane"><div class="tick"></div></div><p class="mem mem-new">Novo integrante</p></div>
 <div class="row"><div class="lane"><div class="tick"></div></div><p class="mem mem-new">Novo integrante</p></div>
 <div class="row"><div class="lane"><div class="tick"></div></div><p class="mem mem-new">Novo integrante</p></div>
@@ -500,6 +509,7 @@ body.m .nav span{padding:9px 12px;font-size:14px}
 <div class="org-stem"></div>
 <div class="team-lead"><p class="lead-r">SUPERVISOR</p><p class="lead-n">Alex</p></div>
 <div class="branch">
+<div class="lane-gap"></div>
 <div class="row"><div class="lane"><div class="tick"></div></div><p class="mem">Keila</p></div>
 <div class="row"><div class="lane"><div class="tick"></div></div><p class="mem">Kesler</p></div>
 <div class="row"><div class="lane"><div class="tick"></div></div><p class="mem">Rosa</p></div>
@@ -515,6 +525,7 @@ body.m .nav span{padding:9px 12px;font-size:14px}
 <div class="org-stem"></div>
 <div class="team-lead"><p class="lead-r">SUPERVISOR</p><p class="lead-n">José</p></div>
 <div class="branch">
+<div class="lane-gap"></div>
 <div class="row"><div class="lane"><div class="tick"></div></div><p class="mem">Alexandre</p></div>
 <div class="row"><div class="lane"><div class="tick"></div></div><p class="mem">Maurício</p></div>
 <div class="row"><div class="lane"><div class="tick"></div></div><p class="mem">Carla</p></div>
