@@ -117,24 +117,27 @@ section {
 .card-l { font-size: 26px; font-weight: 600; color: var(--orange); margin-top: 6px; }
 .card-list { font-size: 24px; line-height: 1.35; color: var(--soft); margin-top: 16px; padding-left: 28px; }
 /* Organograma em árvore */
-.org { display: flex; flex-direction: column; align-items: center; margin-top: 24px; }
+.org { display: flex; flex-direction: column; align-items: center; margin-top: 8px; }
 .org-top { background: var(--ink); padding: 12px 40px; }
 .org-top-t { font-size: 26px; font-weight: 700; letter-spacing: 3px; color: var(--light); }
-.org-stem { width: 2px; height: 20px; background: #8E8F8B; }
+.org-stem { width: 2px; height: 14px; background: #8E8F8B; }
 .org-bar { width: 1142px; height: 2px; background: #8E8F8B; }
 .org-cols { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 48px; width: 1664px; }
 .org-col { display: flex; flex-direction: column; align-items: center; }
-.team-h { width: 100%; box-sizing: border-box; background: var(--orange); padding: 14px 24px 16px; display: flex; flex-direction: column; align-items: center; }
+.team-h { width: 100%; box-sizing: border-box; background: var(--orange); padding: 12px 24px; display: flex; flex-direction: column; align-items: center; }
 .team-n { font-size: 36px; font-weight: 700; line-height: 1.1; color: var(--light); }
 .team-s { font-size: 24px; font-weight: 600; color: var(--ink); margin-top: 4px; }
+.team-lead { width: 100%; box-sizing: border-box; background: var(--ink); padding: 10px 20px 12px; display: flex; flex-direction: column; align-items: center; }
+.lead-r { font-size: 24px; font-weight: 700; letter-spacing: 3px; color: var(--orange); }
+.lead-n { font-size: 34px; font-weight: 700; line-height: 1.1; color: var(--light); margin-top: 2px; }
 .branch { width: 100%; display: flex; flex-direction: column; padding-left: 28px; box-sizing: border-box; }
-.row { display: flex; align-items: flex-start; padding-bottom: 9px; }
+.row { display: flex; align-items: flex-start; padding-bottom: 7px; }
 .row-last { padding-bottom: 0; }
 .lane { width: 28px; align-self: stretch; border-left: 2px solid #8E8F8B; box-sizing: border-box; }
-.lane-last { align-self: flex-start; height: 22px; }
-.tick { width: 26px; height: 2px; background: #8E8F8B; margin-top: 20px; }
-.mem { flex: 1; font-size: 24px; font-weight: 600; line-height: 1.1; color: var(--ink); background: #FFFFFF; border-left: 4px solid var(--orange); padding: 8px 16px; box-shadow: 0 1px 3px rgba(31,32,32,0.12); }
-.mem-open { font-weight: 500; color: #8A8B87; background: transparent; border: 2px dashed #B4B5B0; box-shadow: none; padding: 6px 16px; }
+.lane-last { align-self: flex-start; height: 21px; }
+.tick { width: 26px; height: 2px; background: #8E8F8B; margin-top: 19px; }
+.mem { flex: 1; font-size: 24px; font-weight: 600; line-height: 1.1; color: var(--ink); background: #FFFFFF; border-left: 4px solid var(--orange); padding: 7px 16px; box-shadow: 0 1px 3px rgba(31,32,32,0.12); }
+.mem-open { font-weight: 500; color: #8A8B87; background: transparent; border: 2px dashed #B4B5B0; box-shadow: none; padding: 5px 16px; }
 
 .card-k { font-size: 24px; font-weight: 700; letter-spacing: 3px; color: var(--soft); margin-top: 18px; }
 .card-open { font-size: 26px; color: var(--soft); margin-top: 10px; }
@@ -230,6 +233,7 @@ body.m .card-k{font-size:11px;letter-spacing:2px;margin-top:10px} body.m .card-o
 body.m .org{margin-top:20px;align-items:stretch} body.m .org-top{align-self:center;padding:10px 16px} body.m .org-top-t{font-size:13px;letter-spacing:2px}
 body.m .org>.org-stem{align-self:center;height:14px} body.m .org-bar,body.m .org-col>.org-stem{display:none}
 body.m .org-cols{grid-template-columns:1fr;gap:18px;width:100%} body.m .team-h{padding:10px 14px} body.m .team-n{font-size:20px} body.m .team-s{font-size:13px}
+body.m .team-lead{padding:8px 12px} body.m .lead-r{font-size:11px;letter-spacing:2px} body.m .lead-n{font-size:18px}
 body.m .branch{padding-left:16px} body.m .lane{width:16px} body.m .tick{width:14px;margin-top:14px} body.m .lane-last{height:16px}
 body.m .mem{font-size:14px;padding:6px 12px} body.m .row{padding-bottom:5px}
 body.m .moves{flex-direction:column;gap:12px;width:100%;margin-top:20px}
@@ -296,7 +300,8 @@ body.m .nav span{padding:9px 12px;font-size:14px}
 <div class="org-cols">
 <div class="org-col in" style="--i:2">
 <div class="org-stem"></div>
-<div class="team-h"><p class="team-n">Brutamontes</p><p class="team-s">Construção · RH e Diretor Comercial</p></div>
+<div class="team-h"><p class="team-n">Brutamontes</p></div>
+<div class="team-lead"><p class="lead-r">CONSTRUÇÃO</p><p class="lead-n">RH e Diretor Comercial</p></div>
 <div class="branch">
 <div class="row"><div class="lane"><div class="tick"></div></div><p class="mem mem-open">A contratar</p></div>
 <div class="row"><div class="lane"><div class="tick"></div></div><p class="mem mem-open">A contratar</p></div>
@@ -310,7 +315,8 @@ body.m .nav span{padding:9px 12px;font-size:14px}
 </div>
 <div class="org-col in" style="--i:3">
 <div class="org-stem"></div>
-<div class="team-h"><p class="team-n">Movimento</p><p class="team-s">Estruturada pelo Diretor Comercial</p></div>
+<div class="team-h"><p class="team-n">Movimento</p></div>
+<div class="team-lead"><p class="lead-r">ESTRUTURAÇÃO</p><p class="lead-n">Diretor Comercial</p></div>
 <div class="branch">
 <div class="row"><div class="lane"><div class="tick"></div></div><p class="mem">Keila</p></div>
 <div class="row"><div class="lane"><div class="tick"></div></div><p class="mem">Kesler</p></div>
@@ -323,7 +329,8 @@ body.m .nav span{padding:9px 12px;font-size:14px}
 </div>
 <div class="org-col in" style="--i:4">
 <div class="org-stem"></div>
-<div class="team-h"><p class="team-n">Performance</p><p class="team-s">Supervisor · José</p></div>
+<div class="team-h"><p class="team-n">Performance</p></div>
+<div class="team-lead"><p class="lead-r">SUPERVISOR</p><p class="lead-n">José</p></div>
 <div class="branch">
 <div class="row"><div class="lane"><div class="tick"></div></div><p class="mem">Alex</p></div>
 <div class="row"><div class="lane"><div class="tick"></div></div><p class="mem">Rodrigo</p></div>
