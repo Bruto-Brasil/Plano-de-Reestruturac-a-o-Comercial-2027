@@ -164,6 +164,12 @@ section {
 @keyframes rise { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
 .in { animation: rise 600ms ease-out both; animation-delay: calc(var(--i, 0) * 110ms); }
 
+#stage>section{width:var(--W,1920px);height:var(--H,1080px);padding-left:calc(128px + var(--ox,0px));padding-right:calc(128px + var(--ox,0px))}
+#stage>section:not(.cover){padding-top:calc(236px + var(--oy,0px))}
+#stage>section.cover{padding-top:calc(200px + var(--oy,0px));padding-bottom:calc(112px + var(--oy,0px))}
+#stage .top{left:calc(128px + var(--ox,0px));top:calc(52px + var(--oy,0px))}
+#stage .mark{left:calc(1566px + var(--ox,0px));top:calc(138px + var(--oy,0px))}
+#stage .photo{width:100%;height:100%}
 .nav{position:fixed;bottom:18px;right:18px;display:flex;gap:8px;align-items:center;font-family:Barlow,Arial,sans-serif;z-index:5}
 .nav button{display:flex;align-items:center;justify-content:center;width:44px;height:44px;border:0;border-radius:22px;background:rgba(40,41,41,.8);color:#F5F3EF;font-size:22px;cursor:pointer}
 .nav button:hover{background:#DF6420}
@@ -305,7 +311,9 @@ section {
 <div class="nav"><button id="prev" aria-label="Slide anterior">‹</button><span id="count"></span><button id="next" aria-label="Próximo slide">›</button><button id="fs" aria-label="Tela cheia" title="Tela cheia (F)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path id="fsi" d="M4 9V4h5M15 4h5v5M20 15v5h-5M9 20H4v-5"/></svg></button></div>
 <script>
 const st=document.getElementById('stage'),S=[...st.children],N=S.length;let cur=0;
-function fit(){const k=Math.min(innerWidth/1920,innerHeight/1080);st.style.transform=`scale(${k}) translate(-50%,-50%)`;st.style.transformOrigin='0 0';st.style.left='50%';st.style.top='50%';st.style.transform=`translate(-50%,-50%) scale(${k})`;st.style.transformOrigin='50% 50%';}
+function fit(){const a=innerWidth/innerHeight,W=Math.max(1920,Math.round(1080*a)),H=Math.max(1080,Math.round(1920/a)),k=Math.min(innerWidth/W,innerHeight/H);
+ st.style.setProperty('--W',W+'px');st.style.setProperty('--H',H+'px');st.style.setProperty('--ox',((W-1920)/2)+'px');st.style.setProperty('--oy',((H-1080)/2)+'px');
+ st.style.width=W+'px';st.style.height=H+'px';st.style.transformOrigin='50% 50%';st.style.transform=`translate(-50%,-50%) scale(${k})`;}
 function go(i,push=true){cur=Math.max(0,Math.min(N-1,i));S.forEach((s,j)=>s.classList.toggle('on',j===cur));
  S[cur].querySelectorAll('.in').forEach(e=>{e.style.animation='none';e.offsetHeight;e.style.animation='';});
  document.getElementById('count').textContent=(cur+1)+' / '+N;if(push)history.replaceState(null,'','#slide-'+(cur+1));}
