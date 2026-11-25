@@ -288,8 +288,8 @@ body.m .nav button{width:40px;height:40px}
 body.m .nav span{padding:9px 12px;font-size:14px}
 
 .nav{position:fixed;bottom:18px;right:18px;display:flex;gap:8px;align-items:center;font-family:Barlow,Arial,sans-serif;z-index:5}
-.nav{transition:opacity .25s ease}
-.nav.hide{opacity:0;pointer-events:none}
+.nav{transition:transform .3s ease}
+.nav.hide{transform:translateY(50px)}
 .nav button{display:flex;align-items:center;justify-content:center;width:44px;height:44px;border:0;border-radius:22px;background:rgba(40,41,41,.8);color:#F5F3EF;font-size:22px;cursor:pointer}
 .nav button:hover{background:#DF6420}
 .nav span{white-space:nowrap;color:#F5F3EF;background:rgba(40,41,41,.8);padding:10px 14px;border-radius:22px;font-size:15px;letter-spacing:1px}
@@ -541,7 +541,7 @@ document.addEventListener('fullscreenchange',fsUi);document.addEventListener('we
 addEventListener('keydown',e=>{if(e.key==='f'||e.key==='F')toggleFs()});
 const nav=document.getElementById('nav');
 if(matchMedia('(hover: hover) and (pointer: fine)').matches){nav.classList.add('hide');
- addEventListener('mousemove',e=>{const near=e.clientX>innerWidth-320&&e.clientY>innerHeight-200;nav.classList.toggle('hide',!near)});
+ addEventListener('mousemove',e=>{const near=e.clientX>innerWidth-18-nav.offsetWidth-28&&e.clientY>innerHeight-18-nav.offsetHeight-28;nav.classList.toggle('hide',!near)});
  document.documentElement.addEventListener('mouseleave',()=>nav.classList.add('hide'));}
 fit();fromHash();
 </script></body></html>
