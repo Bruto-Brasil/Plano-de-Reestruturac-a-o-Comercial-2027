@@ -92,7 +92,7 @@ section {
 .split-t { font-size: 24px; font-weight: 700; letter-spacing: 2px; color: var(--light); }
 .split-ti { font-size: 24px; font-weight: 700; letter-spacing: 2px; color: var(--ink); }
 
-.cmp { display: flex; margin-top: 88px; }
+.cmp { display: flex; margin-top: 56px; }
 .cmp-col { flex: 1; display: flex; flex-direction: column; padding-right: 64px; }
 .cmp-mid { border-left: 2px solid #5C5D5C; padding-left: 64px; }
 .cmp-row { display: flex; align-items: flex-end; gap: 40px; margin-top: 28px; }
@@ -196,6 +196,11 @@ section {
 .in { animation: rise 600ms ease-out both; animation-delay: calc(var(--i, 0) * 110ms); }
 .mem-new { font-weight: 500; color: #4A4B4A; background: #EAE9E4; border: 1px solid #D6D5D0; }
 
+.total { display: flex; align-items: center; gap: 48px; margin-top: 44px; padding-top: 28px; border-top: 2px solid #5C5D5C; }
+.total-k { font-size: 24px; font-weight: 700; letter-spacing: 3px; color: #A9AAA6; }
+.total-v { font-size: 72px; font-weight: 600; line-height: 1; letter-spacing: -1px; color: var(--light); }
+.total-d { font-size: 32px; font-weight: 600; color: var(--light); }
+
 #stage>section{width:var(--W,1920px);height:var(--H,1080px);padding-left:calc(128px + var(--ox,0px));padding-right:calc(128px + var(--ox,0px))}
 #stage>section:not(.cover){padding-top:calc(236px + var(--oy,0px))}
 #stage>section.cover{padding-top:calc(200px + var(--oy,0px));padding-bottom:calc(112px + var(--oy,0px))}
@@ -223,6 +228,7 @@ body.m .cmp-row{gap:16px;margin-top:12px}
 body.m .num{font-size:72px;letter-spacing:-2px}
 body.m .arrow{font-size:30px;padding-bottom:14px}
 body.m .delta{font-size:16px;margin-top:12px}
+body.m .total{flex-direction:column;align-items:flex-start;gap:6px;margin-top:24px;padding-top:20px} body.m .total-k{font-size:11px;letter-spacing:2px} body.m .total-v{font-size:44px} body.m .total-d{font-size:16px}
 body.m .tree{margin-top:24px;align-items:stretch}
 body.m .node{padding:10px 16px;align-self:center} body.m .node-t{font-size:13px;letter-spacing:2px}
 body.m .tree>.stem{height:14px;align-self:center} body.m .bar,body.m .team>.stem{display:none}
@@ -287,6 +293,11 @@ body.m .nav span{padding:9px 12px;font-size:14px}
 </div>
 <p class="delta"><span class="hl">+4,9%</span> em comparação a 2025</p>
 </div>
+</div>
+<div class="total in" style="--i:3">
+<p class="total-k">TOTAL · MÁQUINAS VENDIDAS</p>
+<p class="total-v">604 <span class="hl">→</span> 485</p>
+<p class="total-d"><span class="hl">−19,7%</span> em comparação a 2025</p>
 </div>
 </section>
 <section data-n="3" id="organograma" class="s-paper" data-transition="fade">
