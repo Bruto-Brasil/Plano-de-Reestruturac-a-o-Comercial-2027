@@ -359,6 +359,9 @@ section {
 .gl-s .goal-v { font-size: 72px; margin-top: 18px; }
 .gl-s .goal-s { margin-top: 14px; }
 
+.avi { width: 60px; min-width: 60px; height: 60px; display: flex; }
+.avi svg { width: 60px; height: 60px; }
+
 #stage>section{width:var(--W,1920px);height:var(--H,1080px);padding-left:calc(128px + var(--ox,0px));padding-right:calc(128px + var(--ox,0px))}
 #stage>section:not(.cover){padding-top:calc(204px + var(--oy,0px))}
 #stage>section.cover{padding-top:calc(200px + var(--oy,0px));padding-bottom:calc(112px + var(--oy,0px))}
@@ -417,6 +420,7 @@ body.m .fb{grid-template-columns:1fr;gap:16px;margin-top:24px} body.m .fb-panel{
 body.m .cap{font-size:15px;margin-top:8px} body.m .cmp-3{grid-template-columns:1fr;margin-top:20px} body.m .cmp-3 .cmp-col{padding:0} body.m .cmp-3 .cmp-mid{padding:18px 0 0} body.m .cmp-3 .num{font-size:56px} body.m .cmp-3 .arrow{font-size:26px;padding-bottom:10px} body.m .s-orange .team-n{font-size:22px} body.m .s-orange .lead-n{font-size:16px} body.m .s-orange .lead-r{font-size:11px} body.m .s-orange .mem,body.m .s-orange .mem-open,body.m .s-orange .mem-new{font-size:15px;padding:2px 0} body.m .s-orange .team-h{width:100%} body.m .s-orange .tick{margin-top:13px} body.m .s-orange .lane-last{height:14px} body.m .s-orange .branch{padding-left:16px}
 body.m .tcard-h{padding:10px 14px} body.m .tcard-n{font-size:20px} body.m .tcard-lead{padding:12px 14px;gap:10px} body.m .av{width:38px;min-width:38px;height:38px;line-height:38px;font-size:14px} body.m .tl-r{font-size:11px;letter-spacing:2px} body.m .tl-n{font-size:16px} body.m .tcard-b{padding:12px 14px 14px} body.m .m{font-size:14px;padding-left:8px} body.m .mgrid{gap:8px 12px} body.m .slot{height:28px} body.m .slots{gap:8px} body.m .slot-t{font-size:14px;margin-top:10px} body.m .org2v .org-col>.org-stem{display:none!important}
 body.m .gmain{flex-direction:column;align-items:flex-start;gap:4px;padding:16px;margin-top:24px} body.m .gmain-k{font-size:11px;letter-spacing:2px} body.m .gmain-v{font-size:36px} body.m .gmain-s{font-size:14px} body.m .grow{grid-template-columns:1fr;gap:20px;margin-top:20px} body.m .ggrp-k{font-size:11px;letter-spacing:2px;padding-bottom:6px} body.m .gsub{grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:10px} body.m .gsub-1{grid-template-columns:1fr} body.m .gl-s{padding:12px} body.m .gl-s .goal-v{font-size:28px;margin-top:6px} body.m .gl-s .goal-k{font-size:10px;letter-spacing:1px}
+body.m .avi,body.m .avi svg{width:38px;min-width:38px;height:38px}
 body.m .goals{grid-template-columns:1fr 1fr;gap:12px;margin-top:32px}
 body.m .goal{padding:16px} body.m .goal-k{font-size:11px;letter-spacing:2px} body.m .goal-v{font-size:48px;margin-top:12px} body.m .goal-s{font-size:14px;margin-top:8px}
 body.m .nav{bottom:14px;right:50%;transform:translateX(50%)}
@@ -476,7 +480,7 @@ body.m .nav span{padding:9px 12px;font-size:14px}
 <div class="org-stem"></div>
 <div class="tcard">
 <div class="tcard-h"><p class="tcard-n">Brutamontes</p></div>
-<div class="tcard-lead"><p class="av">RH</p><div class="tl"><p class="tl-r">CONSTRUÇÃO</p><p class="tl-n">RH e Diretor Comercial</p></div></div>
+<div class="tcard-lead"><div class="avi"><svg width="60" height="60" viewBox="0 0 60 60" aria-label="Gestor"><circle cx="30" cy="30" r="30" fill="#DF6420"/><circle cx="30" cy="23" r="10.5" fill="#F5F3EF"/><path d="M9.5 51.5C11.5 41 19.5 35 30 35s18.5 6 20.5 16.5A30 30 0 0 1 9.5 51.5z" fill="#F5F3EF"/></svg></div><div class="tl"><p class="tl-r">CONSTRUÇÃO</p><p class="tl-n">RH e Diretor Comercial</p></div></div>
 <div class="tcard-b">
 <div class="slots"><div class="slot"></div><div class="slot"></div><div class="slot"></div><div class="slot"></div><div class="slot"></div><div class="slot"></div><div class="slot"></div><div class="slot"></div></div>
 <p class="slot-t">8 integrantes a contratar</p>
@@ -487,7 +491,7 @@ body.m .nav span{padding:9px 12px;font-size:14px}
 <div class="org-stem"></div>
 <div class="tcard">
 <div class="tcard-h"><p class="tcard-n">Movimento</p></div>
-<div class="tcard-lead"><p class="av">DC</p><div class="tl"><p class="tl-r">ESTRUTURAÇÃO</p><p class="tl-n">Diretor Comercial</p></div></div>
+<div class="tcard-lead"><div class="avi"><svg width="60" height="60" viewBox="0 0 60 60" aria-label="Gestor"><circle cx="30" cy="30" r="30" fill="#DF6420"/><circle cx="30" cy="23" r="10.5" fill="#F5F3EF"/><path d="M9.5 51.5C11.5 41 19.5 35 30 35s18.5 6 20.5 16.5A30 30 0 0 1 9.5 51.5z" fill="#F5F3EF"/></svg></div><div class="tl"><p class="tl-r">ESTRUTURAÇÃO</p><p class="tl-n">Diretor Comercial</p></div></div>
 <div class="tcard-b">
 <div class="mgrid"><p class="m">Keila</p><p class="m">Kesler</p><p class="m">Rosa</p><p class="m">Rose</p><p class="m">Danielson</p><p class="m">Mariara</p><p class="m">Janaina</p></div>
 </div>
@@ -497,7 +501,7 @@ body.m .nav span{padding:9px 12px;font-size:14px}
 <div class="org-stem"></div>
 <div class="tcard">
 <div class="tcard-h"><p class="tcard-n">Performance</p></div>
-<div class="tcard-lead"><p class="av">J</p><div class="tl"><p class="tl-r">SUPERVISOR</p><p class="tl-n">José</p></div></div>
+<div class="tcard-lead"><div class="avi"><svg width="60" height="60" viewBox="0 0 60 60" aria-label="Gestor"><circle cx="30" cy="30" r="30" fill="#DF6420"/><circle cx="30" cy="23" r="10.5" fill="#F5F3EF"/><path d="M9.5 51.5C11.5 41 19.5 35 30 35s18.5 6 20.5 16.5A30 30 0 0 1 9.5 51.5z" fill="#F5F3EF"/></svg></div><div class="tl"><p class="tl-r">SUPERVISOR</p><p class="tl-n">José</p></div></div>
 <div class="tcard-b">
 <div class="mgrid"><p class="m">Alex</p><p class="m">Rodrigo</p><p class="m">Alexandre</p><p class="m">Maurício</p><p class="m">Carla</p><p class="m">Eduardo</p><p class="m">Douglas</p></div>
 </div>
@@ -581,7 +585,7 @@ body.m .nav span{padding:9px 12px;font-size:14px}
 <div class="org-stem"></div>
 <div class="tcard">
 <div class="tcard-h"><p class="tcard-n">Brutamontes</p></div>
-<div class="tcard-lead"><p class="av">R</p><div class="tl"><p class="tl-r">SUPERVISOR</p><p class="tl-n">Rodrigo</p></div></div>
+<div class="tcard-lead"><div class="avi"><svg width="60" height="60" viewBox="0 0 60 60" aria-label="Gestor"><circle cx="30" cy="30" r="30" fill="#DF6420"/><circle cx="30" cy="23" r="10.5" fill="#F5F3EF"/><path d="M9.5 51.5C11.5 41 19.5 35 30 35s18.5 6 20.5 16.5A30 30 0 0 1 9.5 51.5z" fill="#F5F3EF"/></svg></div><div class="tl"><p class="tl-r">SUPERVISOR</p><p class="tl-n">Rodrigo</p></div></div>
 <div class="tcard-b">
 <div class="slots"><div class="slot slot-f"></div><div class="slot slot-f"></div><div class="slot slot-f"></div><div class="slot slot-f"></div><div class="slot slot-f"></div><div class="slot slot-f"></div><div class="slot slot-f"></div><div class="slot slot-f"></div></div>
 <p class="slot-t">8 novos integrantes</p>
@@ -592,7 +596,7 @@ body.m .nav span{padding:9px 12px;font-size:14px}
 <div class="org-stem"></div>
 <div class="tcard">
 <div class="tcard-h"><p class="tcard-n">Movimento</p></div>
-<div class="tcard-lead"><p class="av">A</p><div class="tl"><p class="tl-r">SUPERVISOR</p><p class="tl-n">Alex</p></div></div>
+<div class="tcard-lead"><div class="avi"><svg width="60" height="60" viewBox="0 0 60 60" aria-label="Gestor"><circle cx="30" cy="30" r="30" fill="#DF6420"/><circle cx="30" cy="23" r="10.5" fill="#F5F3EF"/><path d="M9.5 51.5C11.5 41 19.5 35 30 35s18.5 6 20.5 16.5A30 30 0 0 1 9.5 51.5z" fill="#F5F3EF"/></svg></div><div class="tl"><p class="tl-r">SUPERVISOR</p><p class="tl-n">Alex</p></div></div>
 <div class="tcard-b">
 <div class="mgrid"><p class="m">Keila</p><p class="m">Kesler</p><p class="m">Rosa</p><p class="m">Rose</p><p class="m">Danielson</p><p class="m">Mariara</p><p class="m">Janaina</p></div>
 </div>
@@ -602,7 +606,7 @@ body.m .nav span{padding:9px 12px;font-size:14px}
 <div class="org-stem"></div>
 <div class="tcard">
 <div class="tcard-h"><p class="tcard-n">Performance</p></div>
-<div class="tcard-lead"><p class="av">J</p><div class="tl"><p class="tl-r">SUPERVISOR</p><p class="tl-n">José</p></div></div>
+<div class="tcard-lead"><div class="avi"><svg width="60" height="60" viewBox="0 0 60 60" aria-label="Gestor"><circle cx="30" cy="30" r="30" fill="#DF6420"/><circle cx="30" cy="23" r="10.5" fill="#F5F3EF"/><path d="M9.5 51.5C11.5 41 19.5 35 30 35s18.5 6 20.5 16.5A30 30 0 0 1 9.5 51.5z" fill="#F5F3EF"/></svg></div><div class="tl"><p class="tl-r">SUPERVISOR</p><p class="tl-n">José</p></div></div>
 <div class="tcard-b">
 <div class="mgrid"><p class="m">Alexandre</p><p class="m">Maurício</p><p class="m">Carla</p><p class="m">Eduardo</p><p class="m">Douglas</p></div>
 </div>
